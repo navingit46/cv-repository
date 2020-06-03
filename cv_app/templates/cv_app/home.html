@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    {% load static %}
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Naveen Karpuswamy</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'style1.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--library for social media icons-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  </head>
+
+  <body data-spy="scroll" data-target=".navbar" data-offset="50">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top " data-spy="affix" >
+          <a class="navbar-brand active" href="{% url 'home' %}">Naveen Karpuswamy</a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav  ml-auto ">
+              <ul class="nav nav-pills navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link " href="#Professional_Experience" >Professional Experience</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#Technical_SKills">Technical SKills</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#Education">Education</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " href="#About">About</a>
+                </li>
+            <div class="downloadresumesize">
+                <li><a class="nav-item nav-link " href="{% static 'resume.pdf' %}">Download Resume</a></li>
+            </div>
+              </ul>
+
+              <!--
+              <a class="nav-item nav-link " href="{% url 'experience' %}">Professional Experience <span class="sr-only">(current)</span></a>
+              <a class="nav-item nav-link " href="{%  url 'skills' %}">Technical Skills</a>
+              <a class="nav-item nav-link " href="{% url 'about' %}">About</a>
+
+              <a class="nav-item nav-link " href="#">Contact</a>
+            -->
+
+            </div>
+          </div>
+      </nav>
+    </header>
+
+
+    <main role="main">
+
+      <section class="jumbotron jumbotron-fluid text-center" id='grad'>
+        <div class="container" >
+          <h1 class="jumbotron-heading" style="margin-top:21px;">Hola!</h1>
+          <p class="lead text-muted" style="color:#ffe700;">I build stuff that inspire.</p>
+          <img src="{% static 'elon.jpg' %}" height="190" width="190" alt=""/>
+          <p>
+            <a href="mailto:naveenkarpuswamy46@gmail.com" class="btn btn-light my-2"> Email me</a>
+          </p>
+        </div>
+      </section>
+
+
+
+
+      <div class="album py-5 bg-light">
+        <div class="container">
+
+          <div class="row">
+
+            {% for jobs in jobs.all %}
+            <div class="col-md-4" >
+              <div class="card mb-4 box-shadow" style="width: auto;height: auto; ">
+                <img class="card-img-top" width="60" height="200" src="{{ jobs.image.url }}"/>
+                <div class="card-body">
+                  <p class="card-text">{{ jobs.summary }}</p>
+                </div>
+              </div>
+            </div>
+            {% endfor %}
+
+
+
+            <div class="container" data-spy="scroll" data-target="#navbar-scrollspi" data-offset="0">
+              <hr>
+
+              <div class="sections">
+                <h3 id="Professional_Experience" >Professional Experience</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="container" >
+
+                  <ul class="timeline"  >
+                    <li>
+                      <div class="timeline-badge" ><i class="glyphicon glyphicon-check"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading" style="content:auto;">
+                          <h4 class="timeline-title" >Freelancing</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>Working as Full Stack  Developer</small></p>
+                        </div>
+                          <div class="timeline-body" >
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                          </div>
+                      </div>
+                    </li>
+
+                    <li class="timeline-inverted">
+                      <div class="timeline-badge "><i class="glyphicon glyphicon-credit-card"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">Netcracker</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>Worked as a Senior software Engineer</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+                        </div>
+                      </div>
+                    </li>
+
+                    <li>
+                      <div class="timeline-badge  "  ><i class="glyphicon glyphicon-credit-card"></i></div>
+                      <div class="timeline-panel">
+                        <div class="timeline-heading">
+                          <h4 class="timeline-title">Tata Consultancy Services</h4>
+                          <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i>Worked as a  Software Engineer</small></p>
+                        </div>
+                        <div class="timeline-body">
+                          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+
+                        </div>
+                      </div>
+                    </li>
+
+                  </ul>
+                </div>
+
+
+
+              </div>
+
+              <div class="sections" >
+                <h3 id="Technical_SKills" >Technical Skills</h3>
+                <p>Started my career as an automation tester and moved immediately to development  as i was very much fond of building stuff rather than working as a tester.Worked on projects that included adhoc client deliveries up on the requirement and had successfully delivered the projects on time without any delay in the timelines.It was from this experience i started developing interest in various fields of development and started learning programming languages on own, out of interest and curiousity.</p>
+                <p>Here are the few areas of programming where I'm very much proficient in.</p>
+                <div class="grid-container">
+                  <div class="item1">DJANGO</div>
+                  <div class="item2">PYTHON 3</div>
+                  <div class="item3">JAVASCRIPT</div>
+                  <div class="item4">JQUERY</div>
+                  <div class="item5">PHP</div>
+                  <div class="item1">CSS 3</div>
+                  <div class="item2">BOOTSTRAP 4</div>
+                  <div class="item3">HTML 5</div>
+                </div>
+                <br>
+                <p>In addition to this,I have strong command on plotting libraries such as Bokeh,Seaborn,Matplotlib and Chart.js.Also i have hands on experience in Core Java and Selenium</p>
+              </div>
+
+              <div class="sections ">
+                <h3 id="Education">Education</h3>
+                <p></p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                <div class="row">
+                  <div class="column" style="background-color:#bbd6f7;">
+                    <h5>Engineering</h5>
+                      <ul>
+                        <li>Electronics and Communication Engineering with an aggregate of 70%.</li>
+                        <li>Studied at Padmashri Dr.B.V.Raju Institute of Technology.</li>
+                        <li>Jawaharlal Nehru Technological University(JNTU-H),Hyderabad.</li>
+                      </ul>
+
+
+                  </div>
+                  <div class="column" style="background-color:#a9cbf5;">
+                    <h5>Intermediate</h5>
+                      <ul>
+                        <li>M.P.C stream with an aggregate of 91%.</li>
+                        <br>
+                        <li>Studied at Narayana Jr.college,Kukatpally.</li>
+                        <br>
+                        <li>Board of Intermediate Education.</li>
+                      </ul>
+                  </div>
+                  <div class="column" style="background-color:#92bcef;">
+                    <h5>High School</h5>
+                      <ul>
+                        <li>Completed high school with an aggregate of 88%.</li>
+                        <br>
+                        <li>Studied at N.S.K.K High School,Hyderabad.</li>
+
+                      </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div class="sections">
+                <h3 id="About">About</h3>
+                <p>I'm an aspiring Enterpreneur and currently a managing partner in a construction firm based in Hyderabad.Out of the passion for web development i started freelancing web development work.Prior to that i have 4.8 years of experience in working as a software Analyst.</p>
+                <p>During my free time i read a lot.My favourite authors are  Agatha Christie,Sir Aurther Conon Doyle and Mark Twain.I also play a lot of sports.I love playing basketball and planning to build a half court in my house(just to play around during free time).I even like to play football.I follow almost all the elite European leagues.I'm a huge fan of Manchester United.</p>
+                <p>I'm great admirer of Elon Musk and Sir Alex Ferguson.The reason i admire them is because of their never giveup spirit.I was always fascinated by the stuff they build straight from the scratch.</p>
+                </div>
+            </div>
+
+
+
+
+
+          </div>
+        </div>
+      </div>
+
+    </main>
+
+    <footer class="text-muted">
+      <div class="container text-center">
+        <div>
+          <ul class="social-network social-circle">
+            <li><a href="#" class="icoRss" title="Rss"><i class="fa fa-rss"></i></a></li>
+            <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
+            <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
+            <li><a href="#" class="icoGoogle" title="Google +"><i class="fa fa-google-plus"></i></a></li>
+            <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+        <p >&copy; Naveen Karpuswamy {% now "Y" %}</p>
+      </div>
+    </footer>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="{% static 'script1.js' %}"></script>
+  </body>
+</html>
